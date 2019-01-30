@@ -1,11 +1,11 @@
 var urlHabilidades = "https://demo8095991.mockable.io/habilidade_get";
 var urlEmpresas = "https://demo8095991.mockable.io/empresa_get";
 
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
 
     var header = document.getElementById("headerButton");
 
-    header.addEventListener("click", function() {
+    header.addEventListener("click", function () {
         document.body.className = document.body.className ? "" : "dark";
     });
 
@@ -105,7 +105,7 @@ function populateCompanies2(jsonText) {
 
         var habilidadeDefinition = document.createElement("dd");
 
-        habilidadeDefinition.innerHTML = company.habilidade;
+        habilidadeDefinition.innerHTML = company["habilidade"].join("<br />");
 
         companyDefitinionList.appendChild(habilidadeTerm);
 
@@ -130,7 +130,7 @@ function loadData(url, loadCallback, nextCallBack) {
 
     var xhttp = new XMLHttpRequest();
 
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
 
         if (this.readyState == 4 && this.status == 200) {
             loadCallback(this.responseText);
@@ -139,7 +139,7 @@ function loadData(url, loadCallback, nextCallBack) {
 
         }
     }
-    ;
+        ;
     xhttp.open("GET", url, true);
     xhttp.send();
 }
@@ -150,7 +150,7 @@ function loadData2(url, loadCallback, nextCallBack) {
 
     var xhttp = new XMLHttpRequest();
 
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
 
         if (this.readyState == 4 && this.status == 200) {
             loadCallback(this.responseText);
@@ -159,7 +159,7 @@ function loadData2(url, loadCallback, nextCallBack) {
 
         }
     }
-    ;
+        ;
     xhttp.open("GET", url, true);
     xhttp.send();
 }
